@@ -1,0 +1,11 @@
+body {
+    background-image:url("bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#login-details{
+    color: beige;
+    font: Arial;
+    font-size: larger;
+    text-align: center;
+}
