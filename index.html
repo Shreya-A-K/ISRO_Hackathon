@@ -5,6 +5,15 @@
         <title>AtmosSense</title>
     </head>
     <body>
-        
+
+        <form method="POST" action="/" id="login-details">
+            <label >Enter the pin code</label>
+            <input type="text" name="pin" value="{{default_pin}}">
+            <br>OR<Br>
+            <label >Enter location</label>
+            <input type="text" name="location" value="{{default_location}}">
+            <br>
+            <input type="submit" value="Submit">
+        </form>
     </body>
 </HTML>
