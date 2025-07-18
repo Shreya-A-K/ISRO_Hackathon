@@ -19,11 +19,11 @@
     <div id="map" style="height: 500px; width: 90%; margin: 30px auto; border: 2px solid white; border-radius: 12px;"></div>
 
     <script>
-        // Default location - Bangalore (can be updated with geocoding later)
-        var lat = 12.9716;
-        var lon = 77.5946;
+        // Get coordinates passed from Flask
+        var lat = {{ lat | default(12.9716) }};
+        var lon = {{ lon | default(77.5946) }};
 
-        // Initialize map
+        // Initialize map centered at provided coordinates
         var map = L.map('map').setView([lat, lon], 12);
 
         // Add OpenStreetMap tiles
@@ -31,9 +31,9 @@
             attribution: '© OpenStreetMap contributors'
         }).addTo(map);
 
-        // Add marker
+        // Add a marker at the coordinates
         L.marker([lat, lon]).addTo(map)
-            .bindPopup("Showing data for: {{ location }} or PIN {{ pin }}")
+            .bindPopup("Showing data for: {{ location or pin }}")
             .openPopup();
     </script>
 </body>
