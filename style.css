@@ -2,10 +2,36 @@ body {
     background-image:url("bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, serif; /* Or any font of your choice */
+}
+img {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 240px; /* Adjust as needed */
+    height: auto;
 }
 #login-details{
     color: beige;
-    font: Arial;
+    font-family: "Algerian", serif;
     font-size: larger;
-    text-align: center;
+    /*text-align: center;*/
+    margin-top: 100px;
+    margin-left: 500px;
+}
+#second_body{
+    color:white;
+    font-family: "Algerian", serif;
+}
+.center-div-align {
+    margin-left: 100px;  /* slight indentation */
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.submit-div-align {
+    margin-left: 85px;  /* slight indentation */
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
