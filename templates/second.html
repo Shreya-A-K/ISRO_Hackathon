@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AtmosSense</title>
+    <link rel="stylesheet" href="./static/style.css">
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+
+<body id="second_body">
+    <p>The entered pin is : {{ pin }}</p>
+    <p>The entered location is : {{ location }}</p>
+
+    <!-- Map container -->
+    <div id="map" style="height: 500px; width: 90%; margin: 30px auto; border: 2px solid white; border-radius: 12px;"></div>
+
+    <script>
+        // Default location - Bangalore (can be updated with geocoding later)
+        var lat = 12.9716;
+        var lon = 77.5946;
+
+        // Initialize map
+        var map = L.map('map').setView([lat, lon], 12);
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Add marker
+        L.marker([lat, lon]).addTo(map)
+            .bindPopup("Showing data for: {{ location }} or PIN {{ pin }}")
+            .openPopup();
+    </script>
+</body>
+</html>
